@@ -1,0 +1,219 @@
+.admin-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f7f5f4;
+}
+.admin-content {
+  flex: 1;
+  min-width: 0;
+  padding: 42px 45px;
+  background: #fbfaf9;
+}
+.admin-titulo {
+  margin: 0;
+  color: var(--titulo);
+  font: 500 clamp(32px,4vw,44px)/1.1 Georgia,serif;
+}
+.admin-subtitulo {
+  margin: 10px 0 30px;
+  color: var(--texto);
+  line-height: 1.6;
+}
+.cards-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+  margin: 0 0 30px;
+}
+.card-dashboard {
+  padding: 23px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--rosa);
+  box-shadow: 0 8px 24px rgba(79,61,70,.05);
+}
+.card-dashboard:nth-child(even) {
+  border-top-color: var(--azul);
+}
+.card-dashboard h2 {
+  margin: 0;
+  color: var(--titulo);
+  font: 600 31px Georgia,serif;
+}
+.card-dashboard p {
+  margin: 7px 0 0;
+  color: var(--texto);
+  font-size: 13px;
+}
+.ultimas-atividades {
+  padding: 25px;
+  background: #fff;
+  border: 1px solid var(--borda);
+}
+.ultimas-atividades h2 {
+  margin: 0 0 18px;
+  color: var(--titulo);
+  font: 600 22px Georgia,serif;
+}
+.ultimas-atividades table,.tabela-admin table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ultimas-atividades th,.ultimas-atividades td,.tabela-admin th,.tabela-admin td {
+  padding: 13px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee8eb;
+  font-size: 13px;
+}
+.ultimas-atividades th,.tabela-admin th {
+  color: #8b7d84;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.admin-acoes {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.admin-pesquisa {
+  flex: 1;
+  padding: 11px 13px;
+  border: 1px solid var(--borda);
+  background: #fff;
+}
+.admin-botao,.editar,.excluir,.visualizar {
+  padding: 10px 13px;
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+.admin-botao {
+  background: var(--rosa);
+  color: #fff;
+}
+.editar,.visualizar {
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+}
+.excluir {
+  margin-left: 6px;
+  background: var(--rosa-claro);
+  color: var(--rosa-escuro);
+}
+.tabela-admin {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--borda);
+}
+.status,.perfil-admin,.perfil-usuario {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+.status.ativo {
+  background: #edf7f0;
+  color: #4e805e;
+}
+.status.inativo {
+  background: #f4f0f2;
+  color: #897b82;
+}
+.perfil-admin {
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+}
+.perfil-usuario {
+  background: var(--rosa-claro);
+  color: var(--rosa-escuro);
+}
+@media (max-width:1050px) {
+  .cards-dashboard {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width:650px) {
+  .admin-content {
+    padding: 25px 15px !important;
+  }
+  .cards-dashboard {
+    grid-template-columns: 1fr;
+  }
+  .admin-acoes {
+    flex-direction: column;
+  }
+  .ultimas-atividades {
+    overflow: auto;
+  }
+}
+.questionario-detalhe {
+  padding: 15px;
+  background: #fafafa;
+  border-left: 3px solid var(--azul);
+}
+.questionario-detalhe>div {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.questionario-detalhe>div:last-child {
+  border-bottom: 0;
+}
+.questionario-detalhe strong {
+  color: var(--titulo);
+  font-size: 13px;
+}
+.questionario-detalhe p {
+  margin: 5px 0 0;
+  color: var(--texto);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.linha-detalhe td {
+  background: #fbfbfb;
+}
+.informacoes-admin-lista {
+  margin-top: 2rem;
+}
+/* Espaçamento entre o formulário de informações e a lista de conteúdos. */
+.informacoes-admin-lista {
+  margin-top: 2rem;
+}
+.admin-config-card + .tabela-admin {
+  margin-top: 2rem;
+}
+.dashboard-instituicao {
+  max-width: none;
+  margin: 2rem 0;
+}
+.dashboard-instituicao h2 {
+  margin: 0 0 1.25rem;
+  color: var(--titulo);
+}
+.dashboard-dados-instituicao {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+.dashboard-dados-instituicao > div {
+  padding: 1rem;
+  border: 1px solid var(--borda);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.dashboard-dados-instituicao dt {
+  margin-bottom: 0.35rem;
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+.dashboard-dados-instituicao dd {
+  margin: 0;
+  color: var(--titulo);
+  overflow-wrap: anywhere;
+}
+@media (max-width: 650px) {
+  .dashboard-dados-instituicao {
+    grid-template-columns: 1fr;
+  }
+}

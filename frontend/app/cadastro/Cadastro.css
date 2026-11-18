@@ -1,0 +1,83 @@
+.cadastro-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 6%;
+  background: var(--rosa-claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cadastro-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 45px;
+  background: var(--branco);
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(48, 75, 92, 0.09);
+  border-top: 5px solid var(--azul);
+}
+.cadastro-card h1 {
+  margin: 0 0 10px;
+  text-align: center;
+  color: var(--titulo);
+  font-size: 36px;
+  font-weight: 600;
+}
+.cadastro-subtitle {
+  margin: 0 0 35px;
+  text-align: center;
+  color: var(--texto);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.cadastro-card form {
+  display: flex;
+  flex-direction: column;
+}
+/* LINK PARA LOGIN */
+.cadastro-links {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--borda);
+  text-align: center;
+}
+.cadastro-links p {
+  margin: 0;
+  color: var(--texto);
+  font-size: 15px;
+}
+.cadastro-links a {
+  color: var(--rosa);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.cadastro-links a:hover {
+  color: var(--azul);
+  text-decoration: underline;
+}
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  .cadastro-container {
+    padding: 60px 5%;
+  }
+  .cadastro-card {
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+  .cadastro-card h1 {
+    font-size: 30px;
+  }
+  .cadastro-subtitle {
+    font-size: 15px;
+  }
+}
+.form-kicker {
+  margin: 0 0 8px;
+  color: var(--rosa-escuro);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}

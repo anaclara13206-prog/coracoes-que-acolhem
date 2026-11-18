@@ -1,0 +1,22 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  min-width: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+.logo-imagem {
+  display: block;
+  width: 132px;
+  height: 64px;
+  object-fit: contain;
+  object-position: left center;
+}
+@media (max-width: 420px) {
+  .logo-imagem {
+    width: 104px;
+    height: 54px;
+  }
+}

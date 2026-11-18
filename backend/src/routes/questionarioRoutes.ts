@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { autenticar } from "../middlewares/authMiddleware.js";
+import { isAdmin } from "../middlewares/isAdminMiddleware.js";
+import { criar, minhas, listar, atualizarStatus } from "../controllers/questionarioController.js";
+const router = Router();
+router.post("/", autenticar, criar);
+router.get("/minhas", autenticar, minhas);
+router.get("/", autenticar, isAdmin, listar);
+router.patch("/:id/status", autenticar, isAdmin, atualizarStatus);
+export default router;

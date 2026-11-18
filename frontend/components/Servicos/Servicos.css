@@ -1,0 +1,105 @@
+.servicos {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 105px 0;
+}
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 45px;
+}
+.section-heading > span {
+  color: var(--rosa-escuro);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+.section-heading h2 {
+  margin: 10px 0 12px;
+  color: var(--titulo);
+  font-family: inherit;
+  font-size: clamp(35px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+.section-heading p {
+  margin: 0;
+  color: var(--texto);
+  line-height: 1.7;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card-servico {
+  min-height: 285px;
+  padding: 30px;
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--rosa);
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-servico.azul {
+  border-top-color: var(--azul);
+}
+.card-servico.laranja {
+  border-top-color: var(--laranja);
+}
+.card-servico:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+.icone {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  background: var(--rosa-claro);
+  color: var(--rosa-escuro);
+  border-radius: 50%;
+  font-size: 22px;
+}
+.azul .icone {
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+}
+.laranja .icone {
+  background: var(--laranja-claro);
+  color: #b8773f;
+}
+.card-servico h3 {
+  margin: 0 0 11px;
+  color: var(--titulo);
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 600;
+}
+.card-servico p {
+  margin: 0;
+  color: var(--texto);
+  line-height: 1.7;
+  font-size: 15px;
+}
+.card-servico a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  color: var(--rosa-escuro);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.card-servico a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card-servico {
+    min-height: auto;
+  }
+}

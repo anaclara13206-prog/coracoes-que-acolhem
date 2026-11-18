@@ -1,0 +1,31 @@
+.button {
+  min-height: 44px;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--branco);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(70, 55, 63, 0.12);
+}
+.button-rosa {
+  background: var(--rosa);
+}
+.button-rosa:hover {
+  background: var(--rosa-escuro);
+}
+.button-azul {
+  background: var(--azul);
+}
+.button-azul:hover {
+  background: var(--azul-escuro);
+}

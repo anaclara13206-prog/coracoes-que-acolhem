@@ -1,0 +1,13 @@
+import { Router } from "express";
+import { listar, listarMinhas, buscarPorId, criar, confirmar, recusar, remover, } from "../controllers/doacaoController.js";
+import { autenticar } from "../middlewares/authMiddleware.js";
+import { isAdmin } from "../middlewares/isAdminMiddleware.js";
+const router = Router();
+router.post("/", autenticar, criar);
+router.get("/minhas", autenticar, listarMinhas);
+router.get("/", autenticar, isAdmin, listar);
+router.patch("/:id/confirmar", autenticar, isAdmin, confirmar);
+router.patch("/:id/recusar", autenticar, isAdmin, recusar);
+router.get("/:id", autenticar, isAdmin, buscarPorId);
+router.delete("/:id", autenticar, isAdmin, remover);
+export default router;

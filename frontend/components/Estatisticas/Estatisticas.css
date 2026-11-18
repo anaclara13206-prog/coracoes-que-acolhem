@@ -1,0 +1,64 @@
+.estatisticas {
+  width: 100%;
+  margin-top: 0;
+  padding: 80px 6%;
+  background: var(--rosa-claro);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+.numero {
+  flex: 1;
+  max-width: 250px;
+  padding: 25px 20px;
+  text-align: center;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(48, 75, 92, 0.07);
+  transition: 0.3s ease;
+}
+.numero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(48, 75, 92, 0.11);
+}
+.numero h2 {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 600;
+  color: var(--rosa);
+}
+.numero:nth-child(even) h2 {
+  color: var(--azul);
+}
+.numero p {
+  margin: 10px 0 0;
+  color: var(--texto);
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .estatisticas {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .numero {
+    flex: 0 1 220px;
+  }
+}
+@media (max-width: 600px) {
+  .estatisticas {
+    padding: 60px 5%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .numero {
+    width: 100%;
+    max-width: 350px;
+  }
+  .numero h2 {
+    font-size: 40px;
+  }
+}

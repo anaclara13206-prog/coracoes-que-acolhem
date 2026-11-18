@@ -1,0 +1,12 @@
+import { Router } from "express";
+import { listar, minhas, buscarPorId, criar, remover, responder } from "../controllers/contatoController.js";
+import { autenticar } from "../middlewares/authMiddleware.js";
+import { isAdmin } from "../middlewares/isAdminMiddleware.js";
+const router = Router();
+router.post("/", criar);
+router.get("/", autenticar, isAdmin, listar);
+router.get("/minhas", autenticar, minhas);
+router.get("/:id", autenticar, isAdmin, buscarPorId);
+router.patch("/:id/resposta", autenticar, isAdmin, responder);
+router.delete("/:id", autenticar, isAdmin, remover);
+export default router;

@@ -1,0 +1,125 @@
+.sidebar {
+  width: 255px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #526b7b;
+  color: #fff;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 4px 10px 26px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+.sidebar-brand>span {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.12);
+  border-radius: 50%;
+  color: #f3bdcd;
+}
+.sidebar-brand strong,.sidebar-brand small {
+  display: block;
+}
+.sidebar-brand strong {
+  font: 600 17px Georgia,serif;
+}
+.sidebar-brand small {
+  margin-top: 2px;
+  color: #e9eef1;
+  font-size: 13px;
+}
+.sidebar-admin {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 22px 10px;
+  color: #e9eef1;
+}
+.sidebar-admin>svg {
+  color: #f3bdcd;
+}
+.sidebar-admin span,.sidebar-admin strong {
+  display: block;
+}
+.sidebar-admin span {
+  font-size: 11px;
+  opacity: .75;
+}
+.sidebar-admin strong {
+  margin-top: 3px;
+  font-size: 14px;
+}
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 12px;
+  color: #eef3f5;
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  transition: .2s;
+}
+.sidebar nav a:hover,.sidebar nav a.ativo {
+  background: rgba(255,255,255,.08);
+  border-left-color: #f0b2c4;
+  color: #fff;
+}
+.sidebar nav svg {
+  font-size: 17px;
+}
+.sidebar-voltar {
+  margin-top: auto;
+  padding: 16px 12px 3px;
+  color: #e5edf1;
+  text-decoration: none;
+  font-size: 13px;
+  border-top: 1px solid rgba(255,255,255,.13);
+}
+@media (max-width:800px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    padding: 15px;
+  }
+  .sidebar-brand {
+    padding-bottom: 15px;
+  }
+  .sidebar-admin {
+    padding: 14px 10px;
+  }
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .sidebar nav a {
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+  .sidebar nav a.ativo {
+    border-bottom-color: #f0b2c4;
+  }
+  .sidebar-voltar {
+    margin-top: 12px;
+  }
+  .admin-layout {
+    display: block !important;
+  }
+  .admin-content {
+    padding: 24px 16px !important;
+  }
+}

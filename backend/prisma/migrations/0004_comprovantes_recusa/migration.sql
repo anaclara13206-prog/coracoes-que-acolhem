@@ -1,0 +1,2 @@
+ALTER TABLE doacao ADD COLUMN IF NOT EXISTS comprovanteurl TEXT;
+ALTER TABLE doacao ADD COLUMN IF NOT EXISTS motivorecusa TEXT;

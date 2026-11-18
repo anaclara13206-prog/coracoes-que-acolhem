@@ -1,0 +1,59 @@
+.doacoes-container {
+  min-height: 100vh;
+  padding: 75px 20px 95px;
+  background: linear-gradient(135deg,var(--azul-claro),#fff 58%,var(--rosa-claro));
+}
+.doacoes-banner {
+  width: min(880px,100%);
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.doacoes-banner .form-kicker {
+  color: var(--rosa-escuro);
+}
+.doacoes-banner h1 {
+  margin: 8px 0 15px;
+  color: var(--titulo);
+  font: 500 clamp(38px,5vw,56px)/1.08 Georgia,"Times New Roman",serif;
+}
+.doacoes-banner p {
+  max-width: 720px;
+  margin: auto;
+  color: var(--texto);
+  font-size: 17px;
+  line-height: 1.8;
+}
+.doacoes-cards {
+  width: min(1120px,100%);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 22px;
+}
+.doacoes-cards .card-doacao {
+  flex: 0 1 320px;
+}
+@media (max-width:900px) {
+  .doacoes-cards {
+    max-width: 720px;
+  }
+}
+@media (max-width:650px) {
+  .doacoes-container {
+    padding: 55px 15px 70px;
+  }
+  .doacoes-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .doacoes-cards .card-doacao {
+    width: 100%;
+    max-width: 380px;
+  }
+  .doacoes-banner p {
+    font-size: 16px;
+  }
+}

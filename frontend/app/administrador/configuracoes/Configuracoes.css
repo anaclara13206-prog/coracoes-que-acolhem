@@ -1,0 +1,61 @@
+.admin-config-card {
+  max-width: 850px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--azul);
+  box-shadow: var(--sombra);
+}
+.admin-config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 18px;
+}
+.admin-config-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+  color: var(--titulo);
+  font-size: 13px;
+  font-weight: 700;
+}
+.admin-config-card input,.admin-config-card textarea {
+  padding: 12px 13px;
+  border: 1px solid var(--borda);
+  background: #fff;
+  color: var(--titulo);
+  font-weight: 400;
+}
+.admin-config-card textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+.admin-config-card input:focus,.admin-config-card textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(130,175,208,.14);
+}
+.admin-config-textarea {
+  margin-top: 0;
+}
+.admin-config-card button {
+  border: 0;
+  cursor: pointer;
+}
+.admin-config-observacao {
+  margin: 20px 0 0;
+  padding-top: 17px;
+  border-top: 1px solid var(--borda);
+  color: #8a7b83;
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (max-width:650px) {
+  .admin-config-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-config-card {
+    padding: 23px;
+  }
+}

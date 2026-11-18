@@ -1,0 +1,15 @@
+import { Router } from "express";
+import { listar, minhaInscricao, inscrever, atualizarStatus, finalizar, remover, buscarPorId, presencas, registrarFrequencia } from "../controllers/voluntarioController.js";
+import { autenticar } from "../middlewares/authMiddleware.js";
+import { isAdmin } from "../middlewares/isAdminMiddleware.js";
+const router = Router();
+router.post("/", autenticar, inscrever);
+router.get("/minha", autenticar, minhaInscricao);
+router.get("/", autenticar, isAdmin, listar);
+router.get("/:id/presencas", autenticar, presencas);
+router.post("/:id/presencas", autenticar, isAdmin, registrarFrequencia);
+router.patch("/:id/status", autenticar, isAdmin, atualizarStatus);
+router.patch("/:id/finalizar", autenticar, isAdmin, finalizar);
+router.get("/:id", autenticar, isAdmin, buscarPorId);
+router.delete("/:id", autenticar, isAdmin, remover);
+export default router;

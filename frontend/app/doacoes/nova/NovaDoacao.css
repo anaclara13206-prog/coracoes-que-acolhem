@@ -1,0 +1,183 @@
+.nova-doacao-container {
+  min-height: 100vh;
+  padding: 75px 20px;
+  background: linear-gradient(135deg,var(--rosa-claro),#fff 58%,var(--azul-claro));
+  display: grid;
+  place-items: start center;
+}
+.nova-doacao-card {
+  width: min(680px,100%);
+  padding: 40px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--rosa);
+  box-shadow: var(--sombra);
+}
+.nova-doacao-card h1 {
+  margin: 7px 0 12px;
+  color: var(--titulo);
+  font: 500 clamp(35px,5vw,48px)/1.1 Georgia,serif;
+}
+.nova-doacao-subtitulo {
+  margin: 0 0 28px;
+  color: var(--texto);
+  line-height: 1.7;
+}
+.nova-doacao-aviso {
+  margin-bottom: 22px;
+  padding: 13px 15px;
+  background: var(--azul-claro);
+  color: var(--texto);
+  font-size: 13px;
+}
+.nova-doacao-aviso a {
+  color: var(--rosa-escuro);
+  font-weight: 700;
+}
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.select-group span {
+  color: var(--titulo);
+  font-size: 14px;
+  font-weight: 600;
+}
+.select-group select {
+  min-height: 45px;
+  padding: 10px 13px;
+  border: 1px solid #ddd5da;
+  background: #fff;
+  color: var(--titulo);
+  border-radius: 7px;
+}
+.textarea-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.textarea-group label {
+  color: var(--titulo);
+  font-size: 14px;
+  font-weight: 600;
+}
+.textarea-group textarea {
+  min-height: 140px;
+  padding: 13px 14px;
+  border: 1px solid #ddd5da;
+  border-radius: 7px;
+  resize: vertical;
+}
+.textarea-group textarea:focus,.select-group select:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(130,175,208,.16);
+}
+.nova-doacao-card>.button {
+  width: 100%;
+}
+@media (max-width:650px) {
+  .nova-doacao-container {
+    padding: 55px 14px;
+  }
+  .nova-doacao-card {
+    padding: 28px 22px;
+  }
+}
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.select-group span {
+  color: var(--titulo);
+  font-size: 14px;
+  font-weight: 600;
+}
+.select-group select {
+  min-height: 45px;
+  padding: 10px 13px;
+  border: 1px solid #ddd5da;
+  border-radius: 7px;
+  background: #fff;
+}
+.dados-pagamento {
+  margin: 1.25rem 0;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  background: var(--rosa-claro);
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+.dados-pagamento h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--titulo);
+}
+.dados-pagamento p {
+  margin: 0;
+  line-height: 1.55;
+}
+.dados-pagamento small {
+  line-height: 1.5;
+  color: var(--texto);
+}
+.pix-qr {
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  background: #fff;
+  padding: .5rem;
+  border-radius: 12px;
+  align-self: center;
+}
+.dados-transferencia {
+  white-space: pre-wrap;
+}
+.voltar-doacoes {
+  margin-top: 1rem;
+  text-align: center;
+}
+.voltar-doacoes a {
+  color: var(--azul-escuro);
+  font-weight: 600;
+  text-decoration: none;
+}
+.voltar-doacoes a:hover {
+  text-decoration: underline;
+}
+.pix-copia-cola {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.pix-copia-cola summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.pix-copia-cola textarea {
+  width: 100%;
+  min-height: 90px;
+  overflow-wrap: anywhere;
+  resize: vertical;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: .6rem;
+}
+.pix-copia-cola button {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 8px;
+  background: var(--azul-escuro);
+  color: #fff;
+  padding: .65rem .9rem;
+  cursor: pointer;
+}

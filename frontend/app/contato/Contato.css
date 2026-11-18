@@ -1,0 +1,160 @@
+.contato-container {
+  min-height: 100vh;
+  padding: 75px 20px;
+  background: linear-gradient(135deg,var(--azul-claro),#fff 58%,var(--rosa-claro));
+}
+.contato-shell {
+  width: min(1050px,100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: 20px;
+  align-items: start;
+}
+.contato-intro,.contato-card {
+  background: #fff;
+  border: 1px solid var(--borda);
+  box-shadow: var(--sombra);
+}
+.contato-intro {
+  padding: 35px;
+  border-top: 4px solid var(--azul);
+}
+.contato-intro h1 {
+  margin: 7px 0 13px;
+  color: var(--titulo);
+  font: 500 clamp(35px,4vw,48px)/1.1 Georgia,serif;
+}
+.contato-intro>p {
+  margin: 0;
+  color: var(--texto);
+  line-height: 1.75;
+}
+.contato-pontos {
+  margin-top: 30px;
+  padding-top: 23px;
+  border-top: 1px solid var(--borda);
+}
+.contato-pontos strong {
+  display: block;
+  color: var(--titulo);
+  margin-bottom: 8px;
+}
+.contato-pontos p {
+  margin: 0 0 9px;
+  color: var(--texto);
+  font-size: 14px;
+}
+.contato-card {
+  padding: 35px;
+  border-top: 4px solid var(--rosa);
+}
+.contato-card h2 {
+  margin: 0 0 8px;
+  color: var(--titulo);
+  font: 600 25px Georgia,serif;
+}
+.contato-subtitulo {
+  margin: 0 0 28px;
+  color: var(--texto);
+  line-height: 1.6;
+}
+.contato-form {
+  display: flex;
+  flex-direction: column;
+}
+.textarea-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.textarea-group label {
+  color: var(--titulo);
+  font-size: 14px;
+  font-weight: 600;
+}
+.textarea-group textarea {
+  min-height: 155px;
+  padding: 13px 14px;
+  border: 1px solid #ddd5da;
+  border-radius: 7px;
+  resize: vertical;
+}
+.textarea-group textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px rgba(130,175,208,.16);
+}
+.contato-form>.button {
+  width: 100%;
+}
+@media (max-width:800px) {
+  .contato-shell {
+    grid-template-columns: 1fr;
+  }
+  .contato-container {
+    padding: 55px 15px;
+  }
+  .contato-intro,.contato-card {
+    padding: 28px 23px;
+  }
+}
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.select-group span {
+  color: var(--titulo);
+  font-size: 14px;
+  font-weight: 600;
+}
+.select-group select {
+  min-height: 45px;
+  padding: 10px 13px;
+  border: 1px solid #ddd5da;
+  border-radius: 7px;
+  background: #fff;
+}
+.contato-referencias {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--borda);
+}
+.contato-referencias h3 {
+  margin: 0 0 10px;
+  color: var(--titulo);
+  font: 600 18px Georgia,serif;
+}
+.contato-referencias a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  color: var(--azul-escuro);
+  font-size: 13px;
+  text-decoration: none;
+}
+.contato-referencias a svg {
+  font-size: 14px;
+}
+.contato-instituicao {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--borda);
+}
+.contato-instituicao:last-child {
+  border-bottom: 0;
+}
+.contato-instituicao strong {
+  color: var(--titulo);
+}
+.contato-instituicao span {
+  font-size: .9rem;
+  color: var(--texto);
+  overflow-wrap: anywhere;
+}

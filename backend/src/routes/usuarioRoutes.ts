@@ -1,0 +1,12 @@
+import { Router } from "express";
+import { listar, meuPerfil, atualizarMeuPerfil, atualizarTipo, remover, excluirMeuPerfil, } from "../controllers/usuarioController.js";
+import { autenticar } from "../middlewares/authMiddleware.js";
+import { isAdmin } from "../middlewares/isAdminMiddleware.js";
+const router = Router();
+router.get("/perfil", autenticar, meuPerfil);
+router.put("/perfil", autenticar, atualizarMeuPerfil);
+router.delete("/perfil", autenticar, excluirMeuPerfil);
+router.get("/", autenticar, isAdmin, listar);
+router.patch("/:id/tipo", autenticar, isAdmin, atualizarTipo);
+router.delete("/:id", autenticar, isAdmin, remover);
+export default router;

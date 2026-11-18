@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Usuario {
+  idUsuario       Int     @map("idusuario") @id
+  nomeUsuario     String  @map("nomeusuario") @db.VarChar(80)
+  emailUsuario    String  @map("emailusuario") @db.VarChar(80)
+  senhaUsuario    String  @map("senhausuario") @db.VarChar(255)
+  tipoUsuario     String? @map("tipousuario") @db.VarChar(80)
+  telefoneUsuario String? @map("telefoneusuario") @db.VarChar(20)
+  enderecoUsuario String? @map("enderecousuario") @db.VarChar(100)
+
+  @@map("usuario")
+}
+
+model Administrador {
+  idAdministrador  Int     @map("idadministrador") @id
+  idUsuario        Int?    @map("idusuario")
+  nomeEmpresa      String? @map("nomeempresa") @db.VarChar(120)
+  cnpjEmpresa      String? @map("cnpjempresa") @db.VarChar(14)
+  cidadeEmpresa    String? @map("cidadeempresa") @db.VarChar(80)
+  telefoneEmpresa  String? @map("telefoneempresa") @db.VarChar(20)
+  emailEmpresa     String? @map("emailempresa") @db.VarChar(80)
+  descricaoEmpresa String? @map("descricaoempresa")
+  chavePix         String? @map("chavepix")
+  dadosBancarios   String? @map("dadosbancarios")
+
+  @@map("administrador")
+}
+
+model Voluntario {
+  idVoluntario     Int      @map("idvoluntario") @id
+  dataInscricao    DateTime @map("datainscricao") @db.Date
+  statusVoluntario String   @map("statusvoluntario") @db.VarChar(20)
+  disponibilidade  String?  @map("disponibilidade") @db.Text
+  motivacao        String?  @map("motivacao")
+  experiencia      String?  @map("experiencia")
+  idade            Int?     @map("idade")
+  cidade           String?  @map("cidade") @db.VarChar(80)
+  areaInteresse    String?  @map("areainteresse") @db.VarChar(120)
+  idUsuario        Int?     @map("idusuario")
+  idQuestionario   Int?     @map("idquestionario")
+  idAdministrador  Int?     @map("idadministrador")
+
+  @@map("voluntario")
+}
+
+model Doacao {
+  idDoacao            Int       @map("iddoacao") @id
+  valorDoacao         Decimal?  @map("valordoacao") @db.Decimal(10, 5)
+  dataDoacao          DateTime? @map("datadoacao") @db.Date
+  tipoDoacao          String    @map("tipodoacao") @db.VarChar(50)
+  tipoPagamentoDoacao String?   @map("tipopagamentodoacao") @db.VarChar(50)
+  descricaoDoacao     String?   @map("descricaodoacao")
+  idUsuario           Int?      @map("idusuario")
+  idAdministrador     Int?      @map("idadministrador")
+  statusDoacao        String    @default("Pendente de confirmação") @map("statusdoacao") @db.VarChar(40)
+  comprovanteUrl      String?   @map("comprovanteurl")
+  motivoRecusa        String?   @map("motivorecusa")
+
+  @@map("doacao")
+}
+
+model Informacao {
+  idInformacao       Int      @map("idinformacao") @id
+  tituloInformacao   String   @map("tituloinformacao") @db.VarChar(80)
+  conteudoInformacao String   @map("conteudoinformacao")
+  fonteInformacao    String?  @map("fonteinformacao") @db.VarChar(80)
+  dataPublicacao     DateTime @map("datapublicacao") @db.Date
+  idAdministrador    Int      @map("idadministrador")
+  categoria          String?  @map("categoria") @db.VarChar(60)
+  imagemUrl           String?  @map("imagemurl")
+
+  @@map("informacao")
+}
+
+model Questionario {
+  idQuestionario        Int      @map("idquestionario") @id
+  respostasQuestionario String   @map("respostasquestionario")
+  dataEnvioQuestionario DateTime @map("dataenvioquestionario") @db.Date
+  statusQuestionario    String   @map("statusquestionario") @db.VarChar(30)
+  idUsuario             Int?     @map("idusuario")
+  idAdministrador       Int?     @map("idadministrador")
+  idVoluntario          Int?     @map("idvoluntario")
+
+  @@map("questionario")
+}
+
+model Contato {
+  idContato       Int      @map("idcontato") @id
+  nomeContato     String   @map("nomecontato") @db.VarChar(80)
+  emailContato    String   @map("emailcontato") @db.VarChar(80)
+  assuntoContato  String   @map("assuntocontato") @db.VarChar(100)
+  mensagemContato String   @map("mensagemcontato")
+  dataContato     DateTime @map("datacontato") @db.Date
+  idUsuario       Int?     @map("idusuario")
+  idAdministrador Int?     @map("idadministrador")
+  respostaContato String?  @map("respostacontato")
+  dataResposta    DateTime? @map("dataresposta") @db.Timestamp(3)
+
+  @@map("contato")
+}
+
+
+model VoluntarioPresenca {
+  idPresenca    Int      @id @default(autoincrement()) @map("idpresenca")
+  idVoluntario  Int      @map("idvoluntario")
+  dataPresenca DateTime @map("datapresenca") @db.Date
+  horaInicio    String?  @map("horainicio") @db.VarChar(10)
+  horaFim       String?  @map("horafim") @db.VarChar(10)
+  status        String   @map("status") @db.VarChar(20)
+  observacao    String?  @map("observacao")
+
+  @@map("voluntario_presenca")
+}
+
+model SenhaReset {
+  idReset   Int      @id @default(autoincrement()) @map("idreset")
+  idUsuario Int      @map("idusuario")
+  token     String   @unique @map("token") @db.VarChar(120)
+  expiraEm  DateTime @map("expiraem")
+  usadoEm   DateTime? @map("usadoem")
+
+  @@map("senha_reset")
+}

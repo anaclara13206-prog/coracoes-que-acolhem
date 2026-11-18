@@ -1,0 +1,59 @@
+.senha-container {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(135deg,var(--azul-claro),#fff 55%,var(--rosa-claro));
+}
+.senha-card {
+  width: min(540px,100%);
+  margin: auto;
+  padding: 40px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--azul);
+  box-shadow: var(--sombra);
+}
+.senha-card h1 {
+  margin: 7px 0 12px;
+  color: var(--titulo);
+  font: 500 40px/1.1 Georgia,serif;
+}
+.senha-card>p:not(.form-kicker) {
+  margin: 0 0 25px;
+  color: var(--texto);
+  line-height: 1.65;
+}
+.senha-link {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--azul-claro);
+  border: 1px solid #d5e9f2;
+}
+.senha-link strong {
+  display: block;
+  color: var(--titulo);
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+.senha-link a {
+  color: var(--azul-escuro);
+  font-weight: 700;
+}
+.senha-voltar {
+  margin-top: 22px;
+  text-align: center;
+}
+.senha-voltar a {
+  color: var(--rosa-escuro);
+  font-weight: 700;
+}
+@media (max-width:600px) {
+  .senha-container {
+    padding: 50px 14px;
+  }
+  .senha-card {
+    padding: 28px 22px;
+  }
+  .senha-card h1 {
+    font-size: 32px;
+  }
+}
